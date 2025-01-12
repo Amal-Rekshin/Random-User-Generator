@@ -18,17 +18,6 @@ You can try the application live at [Random User Generator Demo](#). *(Replace `
 - A modern web browser (e.g., Chrome, Firefox, Edge).
 - Internet connection to fetch data from the API.
 
-### Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/random-user-generator.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd random-user-generator
-   ```
-3. Open the `index.html` file in your browser.
-
 ### Usage
 1. Open the application in your browser.
 2. Click the **Click** button to fetch random user details.
@@ -63,23 +52,6 @@ A random user detail will look like this:
 
 ## Error Handling
 If the API request fails, an error message will be displayed in place of the user details.
-
-## Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add feature-name"
-   ```
-4. Push to your fork:
-   ```bash
-   git push origin feature-name
-   ```
-5. Create a pull request.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
