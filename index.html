@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Generator</title>
+    <style>
+        h4{
+            margin: 0 50px 0 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button{
+            width: 60px;
+            height: 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color:   rgb(160, 160, 160);
+        }
+    </style>
+</head>
+<body>
+    <h1>Random User Generator</h1>
+    <button onclick="generator()">Click</button>
+    <div id="container">
+        
+
+    </div>
+
+    <script>
+const container = document.getElementById('container');
+    async function generator(){
+        try{
+                const response = await fetch('https://randomuser.me/api/');
+                const data = await response.json();
+                const user = data.results[0];
+                
+                const userName = `${user.name.title}. ${user.name.first} ${user.name.last}`;
+                const userImage = user.picture.large;
+                const gender = user.gender;
+                const email = user.email;
+                const phone = user.phone;
+                const address = user.location.street.number + " " + user.location.street.name + ", " +
+                user.location.city + ", " + user.location.state + ", " + user.location.country;
+                const age = user.dob.age;
+                const dob = user.dob.date;
+                const password = user.login.password;
+
+                container.innerHTML = `
+                <table>
+                    <tr>
+                        <td><h4>UserName</h4></td>
+                        <td><h2>${userName}</h2></td>
+                    </tr>
+                    <tr>
+                        <td><h4>User Image</h4></td>
+                        <td><img src="${userImage}" alt="User Image" /></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Gender</h4></td>
+                        <td><p>${gender}</p></td>
+                    </tr>
+                    <tr>
+                        <td><h4>DOB</h4></td>
+                        <td><p>${dob}</p></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Age</h4></td>
+                        <td><h3>Age: ${age}</h3></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Address</h4></td>
+                        <td><p>${address}</p></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Phone No.</h4></td>
+                        <td><h5>${phone}</h5></td>
+                    </tr>
+                    <tr>
+                        <td><h4>E-Mail</h4></td>
+                        <td><p>${email}</p></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Password</h4></td>
+                        <td><p>${password}</p></td>
+                    </tr>
+                </table>`;
+            }
+        catch(err){
+            container.textContent = "Error found" + err.message;
+        }
+    }
+    </script>
+</body>
+</html>
