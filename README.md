@@ -10,7 +10,7 @@ This project is a simple web application that generates random user information 
 - Handles errors gracefully with user-friendly messages.
 
 ## Live Demo
-You can try the application live at [Random User Generator Demo](#). *([`https://amal-rekshin.github.io/Random-User-Generator/`])*
+You can try the application live at [Random User Generator Demo](https://amal-rekshin.github.io/Random-User-Generator/).
 
 ## Getting Started
 
